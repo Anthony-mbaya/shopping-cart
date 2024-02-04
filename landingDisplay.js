@@ -6,30 +6,32 @@ const homeItemsArray = [
         alt:"shopping items"
     },
     {
-        name:"cloth",
-        image:"https://img.freepik.com/premium-photo/mockup-tshirt-hanging-hanger-store-ai-generated_193066-2441.jpg?size=626&ext=jpg&ga=GA1.1.1788078767.1695748733&semt=ais",
-        alt:"cloth items"
-    },
-    {
         name:"Electronics",
         image:"https://img.freepik.com/premium-vector/realistic-electronic-devices-gadgets-isometry-vector-isometric-illustration-devices_480270-27.jpg",
         alt:"Electronics items"
+    },
+    {
+        name:"cloth",
+        image:"https://img.freepik.com/premium-photo/mockup-tshirt-hanging-hanger-store-ai-generated_193066-2441.jpg?size=626&ext=jpg&ga=GA1.1.1788078767.1695748733&semt=ais",
+        alt:"cloth items"
     }
 ]
+//<h3>${name}</h3>
 //FUNCTION TO DISPLAY HOME ITEMS
 const homeItemsEl = document.getElementById("homeItems");
-homeItemsArray.forEach(({name,image,alt}) => {
+homeItemsArray.forEach(({image,alt}) => {
     homeItemsEl.innerHTML += `
-    <div>
-    <h3>${name}</h3>
-    <img src="${image}" alt="${alt}" onclick="loginFunc()">
+    <div id="homeObj">
+    <img class="homeImage" src="${image}" alt="${alt}" onclick="loginFunc()"> 
     </div>
     `;
 });
 //FUNCTION TO DIPLAY LOGIN
 const loginEl = document.getElementById("login");
+const mainEl = document.getElementById("mainId");
 const loginFunc = () =>{
      homeItemsEl.innerHTML = "";
+     mainEl.innerHTML = "";
      loginEl.innerHTML += `
      <div class="loginClass">
      <h1>LOGIN</h1>

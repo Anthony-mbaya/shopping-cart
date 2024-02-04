@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="main">
+    <!--START OF MAIN-->
+    <div class="main" id="mainId">
 <!--NAVIGATION  BAR-->
         <div id="navBar">
             <div class="title"><i class="fa-regular fa-credit-card"></i>&nbsp;CRUXTON</div>
@@ -27,10 +28,18 @@
 <!--END OF NAV-->
 <!--SEARCH BAR-->
         <div class="searchBar">
-            <input type="search" id="searchEl" placeholder="Search here..."> 
-            <button class="search-btn">search</button>
+            <div id="empty"></div>
+            <div id="search">
+                <input type="search" id="searchEl" placeholder="Search here..."> 
+                <button class="search-btn">Search</button>
+            </div>
+            <div id="sign">
+                <button onclick="loginFunc()">Login</button>
+                <button onclick="signUpFunc()">Sign up</button>
+          </div>
         </div>
     </div>
+  <!--END OF .MAIN-->
 <!--LOGIN,SIGNUP-->
         <div id="login"> 
                 
@@ -43,6 +52,46 @@
        
         </div>
 <!--END OF DISPLAY-->
+<!--START OF OF ADDITIONAL INFORMATION-->
+<div class="advert">
+    <div class="advertDiv">
+        <div class="advertImage">
+            <img src="images/smartphones.webp" alt="" srcset="">
+        </div>
+        <div class="text">
+            <p>Latest Smartphone Model X <br>
+               High-Resolution Display, Powerful Performance <br>
+               Available in 64GB and 128GB Storage Options
+            </p>
+            <p style="color:blue;">
+                Limited-Time Offer! Save 20% Today
+                Free Shipping on All Smartphone Orders
+                Exclusive Online Discount – Shop Now!
+            </p>
+        </div>
+    </div>
+    <div class="advertDiv">
+        <div class="text">
+            <p>Love the sleek design of the J7 shoes! The combination of style 
+                and comfort is exactly what I've been looking for. Can't wait 
+                to add these to my collection! 👟✨
+            </p>
+            <p>Elevate your style and step into comfort with our J7 shoes</p>
+        </div>
+        <div class="advertImage">
+            <img src="images/J7.webp" alt="" srcset="">
+        </div>
+    </div>
+    <div class="advertDiv">
+        <div class="advertImage">
+            <img src="images/louis-vuitton-shirt.webp" alt="" srcset="">
+        </div>
+        <div class="text">
+            <p>Absolutely in love with this Louis Vuitton beauty! 😍✨ Can't wait to add it to my collection! 💼 #LVlove</p>
+            <p>Louis Vuitton never fails to impress! 💯 Would love to know more about the features of this gorgeous item. 🌟 #LuxuryLifestyle</p>
+        </div>
+    </div>
+</div>
 
     <script src="landingDisplay.js"></script>
 </body>
