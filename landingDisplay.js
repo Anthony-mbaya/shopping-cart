@@ -1,37 +1,9 @@
-//ARRAY OF HOME ITEMS
-const homeItemsArray = [
-    {
-        name:"shopping",
-        image:"https://c8.alamy.com/comp/P3T55C/selection-of-the-goods-in-household-shop-P3T55C.jpg",
-        alt:"shopping items"
-    },
-    {
-        name:"Electronics",
-        image:"https://img.freepik.com/premium-vector/realistic-electronic-devices-gadgets-isometry-vector-isometric-illustration-devices_480270-27.jpg",
-        alt:"Electronics items"
-    },
-    {
-        name:"cloth",
-        image:"https://img.freepik.com/premium-photo/mockup-tshirt-hanging-hanger-store-ai-generated_193066-2441.jpg?size=626&ext=jpg&ga=GA1.1.1788078767.1695748733&semt=ais",
-        alt:"cloth items"
-    }
-]
-//<h3>${name}</h3>
-//FUNCTION TO DISPLAY HOME ITEMS
-const homeItemsEl = document.getElementById("homeItems");
-homeItemsArray.forEach(({image,alt}) => {
-    homeItemsEl.innerHTML += `
-    <div id="homeObj">
-    <img class="homeImage" src="${image}" alt="${alt}" onclick="loginFunc()"> 
-    </div>
-    `;
-});
+//const homeItemsEl = document.getElementById("homeItems");
 //FUNCTION TO DIPLAY LOGIN
 const loginEl = document.getElementById("login");
 const mainEl = document.getElementById("mainId");
 const advertEl = document.getElementById("advert");
-const loginFunc = () =>{
-     homeItemsEl.innerHTML = "";
+const loginFunc = () =>{ 
      mainEl.innerHTML = "";
      advertEl.innerHTML = "";
      signUpEl.innerHTML = "";
@@ -74,8 +46,7 @@ const res = ()=>{
 }
 //FUNCTION  FOR SIGN UP
 const signUpEl = document.getElementById("signUp");
-const signUpFunc =()=>{
-    homeItemsEl.innerHTML = "";
+const signUpFunc =()=>{ 
     loginEl.innerHTML = "";
     mainEl.innerHTML = "";
     advertEl.innerHTML = "";
@@ -121,4 +92,6 @@ const signUpFunc =()=>{
     `
 }
 //END OF SIGNUP
+//ALERT MESSAGE ONMOUSEOVER
+ 
   

@@ -133,7 +133,7 @@ const openHideCart =()=>{
     showCart  ? elecCartItemsEl.style.display = "block" : elecCartItemsEl.style.display ="none";
     showCart ? elecContainerEl.style.width = "100%" : elecContainerEl.style.width = "";
     showCart ? elecContainerEl.style.display = "flex" : elecContainerEl.style.display = "";
-    showCart  ? elecCartItemsEl.style.width = "75%" : elecCartItemsEl.style.width ="";
+    showCart  ? elecCartItemsEl.style.width = "50%" : elecCartItemsEl.style.width = "";
     showCart ? elecContainerEl.style.justifyContent = "spaceBetween" : elecContainerEl.style.justifyContent = "";
     showCart ? elecContainerEl.style.overflow = "visible" : elecContainerEl.style.display = "";
 }
