@@ -29,18 +29,23 @@ homeItemsArray.forEach(({image,alt}) => {
 //FUNCTION TO DIPLAY LOGIN
 const loginEl = document.getElementById("login");
 const mainEl = document.getElementById("mainId");
+const advertEl = document.getElementById("advert");
 const loginFunc = () =>{
      homeItemsEl.innerHTML = "";
      mainEl.innerHTML = "";
+     advertEl.innerHTML = "";
+     signUpEl.innerHTML = "";
      loginEl.innerHTML += `
+     <h1 class="loginTitle"><i class="fa-regular fa-credit-card"></i> CRUXTON</h1>
      <div class="loginClass">
      <h1>LOGIN</h1>
      <input type="text" id="userName" placeholder="Username" pattern="Anthony" required>
-     <input type="password" id="passWord" placeholder="Password" pattern="anto" required> 
-     <i onclick="checkPassword()" class="fa-solid fa-eye-low-vision"></i>
+     <div class="pass"><input type="password" id="passWord" placeholder="Password" pattern="anto" required> 
+     <i onclick="checkPassword()" class="fa-solid fa-eye-low-vision"></i></div>
+     <div class="btns">
      <button type="submit" id="submit" onclick="validateUser()">Submit</button>
-     <button type="reset" id="reset" onclick="res()">Reset</button>
-     <p>Don't have an account: <button onclick="signUpFunc()">Sign Up</button></p>
+     <button type="reset" id="reset" onclick="res()">Reset</button></div>
+     <p>Don't have an account: <button onclick="signUpFunc()" class="signup">Sign Up</button></p>
      </div>
      `
 }
@@ -72,9 +77,12 @@ const signUpEl = document.getElementById("signUp");
 const signUpFunc =()=>{
     homeItemsEl.innerHTML = "";
     loginEl.innerHTML = "";
+    mainEl.innerHTML = "";
+    advertEl.innerHTML = "";
     signUpEl.innerHTML += `
     <div>
-       <form class="myForm"> 
+       <form class="form"> 
+          <div class="myForm">
             <label for="fname">FirstName: 
                 <input type="text" name="fname" id="fname" required>
             </label>
@@ -106,6 +114,8 @@ const signUpFunc =()=>{
             <div class="btn">
                <button type="submit" id="save">SAVE</button>
                <button type="reset" id="clear" onclick="res()">CLEAR</button>
+            </div>
+            <button onclick="loginFunc()">Login</button>
             </div>
         </form>
     `
