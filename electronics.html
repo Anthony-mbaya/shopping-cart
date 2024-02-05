@@ -20,7 +20,7 @@
             </div>
             <div class="cartItems">
                 <a href="favourites.html"> <i class="fa-solid fa-star"></i> </a>
-                <a href="cart.html" target="_blank"> <i class="fa-solid fa-cart-shopping"></i> </a>
+                <i class="fa-solid fa-cart-shopping" title="Shopping Cart" onclick="openHideCart()"></i> 
             </div>
         </div>
 <!--END OF NAV-->
@@ -38,14 +38,16 @@
 <!--ELECTRONICS ITEMS & CARTS-->
         <div id="elecContainer">
             <div id="elecDispItems"></div>
-            <div id="elecCartItems">
+            <div id="elecCartItems" class="elecCartItemsClass">
                 <div id="elecCartItems1"></div>
                 <div id="elecCartItems2">
+                    <hr>
                     <p>Number of Items: <span id="noOfItems"></span></p>
                     <p>Cost: <span id="costOfItems"></span></p>
                     <p>Tax: <span id="tax"></span></p>
                     <h3>Grand Total: <span id="grandTotal"></span></h3>
-                    <p id="clear">Clear Cart</p>
+                    <button id="order">Order Now</button>
+                    <button id="clear">Clear Cart</button>
                 </div>
             </div>
         </div>

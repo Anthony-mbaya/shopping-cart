@@ -145,35 +145,7 @@ body{
     background-color: white;
     color: orangered;
 }
-@media (max-width: 1040px) {
-    .title {
-      font-size: 1.2em; 
-    }
-    .navItems{
-        font-size: 1em;
-    }
-    .cartItems{
-        font-size: 1em;
-    }
-    .searchBar > input,button{
-        font-size: 1em;
-    }
-    #sign{ 
-        text-align: right;
-
-    }
-    #sign > button{
-        font-size: 1em;
-    }
-    #homeObj{
-        width: 200px;
-        height: 200px;
-    }.shopNow{
-        font-size: 1.5em;
-        padding: 10px;
-    }
-  }
-  .loginTitle{
+.loginTitle{
     text-align: center;
   }
 .loginClass{
@@ -303,5 +275,124 @@ body{
 }
 .btn > #clear:hover{
     background-color: red;
+}
+#elecContainer{
+    border: 2px solid red;
+    margin: 2em auto; 
+}
+#elecDispItems{ 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2em; 
+}
+.elecElement{ 
+    width: fit-content;
+    display: flex;
+    border-radius: 7px;
+    border: 2px solid orangered;
+}
+.elecElement1{ 
+    border-radius: 5px;
+}
+.elecElement1 > img{
+    width: 300px;
+    height: 200px;
+}
+.elecElement2{  
+    display: block;
+    text-align: center; 
+    padding: 7px;
+}
+.elecElement2 > h3{
+    font-size: 1.3em;
+}
+.elecElement2 > p{ 
+    margin: 1.2em auto;  
+    font-size: 1.2em;
+}
+.elecElement2 > button{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    cursor:cell;
+    transition:opacity 0.5s ease-in-out;
+}
+.elecElement2 > button:hover{ 
+    opacity:  0.6;
+}
+.priceSpan{
+    font-weight: bold;
+    color: orangered;
+    font-size: 1.3em;
+}
 
+.elecCartItemsClass{
+    display: none; 
+    font-size: 1.2em;
+    font-family: sans-serif;
+}
+.elecCartItemsClass > h3,p,button{ 
+    margin: 1.3em auto;
+}
+@media (max-width: 1040px) {
+    .title {
+      font-size: 1.2em; 
+    }
+    .navItems{
+        font-size: 1em;
+    }
+    .cartItems{
+        font-size: 1em;
+    }
+    .searchBar > input,button{
+        font-size: 1em;
+    }
+    #sign{ 
+        text-align: right;
+
+    }
+    #sign > button{
+        font-size: 1em;
+    }
+    #homeObj{
+        width: 200px;
+        height: 200px;
+    }.shopNow{
+        font-size: 1.5em;
+        padding: 10px;
+    }
+    .elecElement1 > img{
+        width: 150px;
+        height: 120px;
+    }
+    .elecElement2{
+        padding: 5px;
+    }
+    .elecElement2 > h3{
+        font-size: 1em;
+    }
+    .elecElement2 > p{ 
+        margin: 1.1em auto;  
+        font-size: 1em;
+    }
+    .elecCartItemsClass{ 
+        font-size: 1em; 
+    }
+    .elecCartItemsClass > h3,p,button{ 
+        margin: 1em auto;
+    }
+  }
+#order,#clear{
+    padding: 7px;
+    font-size: 1.2em;
+}
+#order{
+    background-color:#201f4b;
+    color: white;
+}
+#clear{
+    background-color: red;
+    color: white;
 }
