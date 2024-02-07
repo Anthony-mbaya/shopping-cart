@@ -440,5 +440,7 @@ i{
     }
 }
 .fav{
-    display: none;
+    display: none; 
+    width: fit-content;
+    margin: 2em auto;
 }

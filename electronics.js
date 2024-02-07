@@ -123,7 +123,7 @@ class Cart{
         `
         //IF THE COUNT IS >2 IT SHOULD BE ADDED TO FAVOURITES
         currentItemCount > 2 ? favouritesEl.innerHTML =  `
-        <div id="itemVal"> 
+        <div id="itemVal">  
         <h3>${name} <span id=countId${id}></span></h3>
         <p>Price: $${price}</p>
         </div>
@@ -207,4 +207,5 @@ function favFunc(){
     showCart = !showCart;
    showCart ? elecDispItemsEl.style.display = "none": elecDispItemsEl.style.display = "";
    showCart ? favouritesEl.style.display = "block": favouritesEl.style.display = "none"; 
+   showCart  ? elecCartItemsEl.style.display = "nne" : elecCartItemsEl.style.display ="";
 }
