@@ -1,4 +1,3 @@
-//const homeItemsEl = document.getElementById("homeItems");
 //FUNCTION TO DIPLAY LOGIN
 const loginEl = document.getElementById("login");
 const mainEl = document.getElementById("mainId");
@@ -25,8 +24,8 @@ const loginFunc = () =>{
 const validateUser =()=>{
     let username = document.getElementById('userName');
     let password = document.getElementById('passWord');
-    if (username.value === "Anthony" && password.value === "anto"){
-        alert ("Login Successful! Welcome back Anthony!");
+    if (username.value === "USER" && password.value === "PASS"){
+        alert (`Login Successful! Welcome back  ${username.value}!`);
         window.location.href = "electronics.html";
     }
 }
@@ -91,7 +90,8 @@ const signUpFunc =()=>{
         </form>
     `
 }
-//END OF SIGNUP
-//ALERT MESSAGE ONMOUSEOVER
+//END OF SIGNUP 
  
-  
+function homeBtn(){
+    window.location.href = "landingDisplay.html";
+}

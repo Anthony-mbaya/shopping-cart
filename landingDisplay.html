@@ -9,26 +9,25 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!--START OF MAIN-->
+<!--START OF MAIN-->
     <div class="main" id="mainId">
-<!--NAVIGATION  BAR-->
+  <!--NAVIGATION  BAR-->
         <div id="navBar">
-            <div class="title"><i class="fa-regular fa-credit-card" title="Show or Hide Password"></i>&nbsp;CRUXTON</div>
-            <div class="navItems">
-                <a href="home.html"> <i class="fa-solid fa-house-chimney-window"></i> Home</a>
-                <a href="shop.html"> <i class="fa-solid fa-bag-shopping"></i> Shop</a>
-                <a href="electronics.html"> <i class="fa-solid fa-bolt"></i> Electronics</a>
-                <a href="cloth.html"> <i class="fa-solid fa-shirt"></i>Cloth</a>        
+            <div class="title"><i class="fa-regular fa-credit-card"></i>&nbsp;CRUXTON</div>
+            <div class="emptySpace"> 
             </div>
             <div class="cartItems">
                <i class="fa-solid fa-star" title="Favourites" onmouseover="alertMsg()"></i>
                <i class="fa-solid fa-cart-shopping" title="Shopping Cart"  onmouseover="alertMsg()"></i> 
             </div>
         </div>
-<!--END OF NAV-->
-<!--SEARCH BAR-->
+  <!--END OF NAV BAR-->
+
+  <!--SEARCH BAR-->
         <div class="searchBar">
-            <div id="empty"></div>
+            <div id="startShop">
+                <button class="startShop" onclick="loginFunc()">SHOP!</button>
+            </div>
             <div id="search">
                 <input type="search" id="searchEl" placeholder="Search here..."/> 
                 <button class="search-btn">Search</button>
@@ -39,7 +38,9 @@
           </div>
         </div>
     </div>
-  <!--END OF .MAIN-->
+    <!--END OF SEARCH BAR--> 
+<!--END OF MAIN-->
+
 <!--LOGIN,SIGNUP-->
         <div id="login"> 
                 
@@ -47,11 +48,12 @@
         <div id="signUp">
 
         </div>
-<!--START OF OF ADDITIONAL INFORMATION-->
+
+<!--START OF OF ADVERT INFORMATION-->
 <div id="advert">
     <div class="advertDiv">
         <div class="advertImage">
-            <img src="images/smartphones.webp" alt="" srcset="">
+            <img src="images/smartphones.webp">
         </div>
         <div class="text">
             <p>Latest Smartphone Model X <br>
@@ -74,12 +76,12 @@
             <p>Elevate your style and step into comfort with our J7 shoes</p>
         </div>
         <div class="advertImage">
-            <img src="images/J7.webp" alt="" srcset="">
+            <img src="images/J7.webp">
         </div>
     </div>
     <div class="advertDiv">
         <div class="advertImage">
-            <img src="images/louis-vuitton-shirt.webp" alt="" srcset="">
+            <img src="images/louis-vuitton-shirt.webp" alt="louis vutton shirt">
         </div>
         <div class="text">
             <p>Absolutely in love with this Louis Vuitton beauty! 😍✨ Can't wait to add it to my collection! 💼 #LVlove</p>
@@ -88,7 +90,7 @@
     </div> 
 <div class="shopNow"><button onclick="loginFunc()">SHOP NOW</button>
 </div>
-<!--END OF ADDITIONAL INFO-->
+<!--END OF ADVERT INFO-->
     <script src="landingDisplay.js"></script>
 </body>
 </html>

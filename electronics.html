@@ -13,25 +13,24 @@
 <!--NAVIGATION  BAR-->
         <div id="navBar">
             <div class="title"><i class="fa-regular fa-credit-card"></i>&nbsp;CRUXTON</div>
-            <div class="navItems"> 
-                <a href="shop.html"> <i class="fa-solid fa-bag-shopping"></i> Shop</a>
-                <a href="electronics.html"> <i class="fa-solid fa-bolt"></i> Electronics</a>
-                <a href="cloth.html"> <i class="fa-solid fa-shirt"></i>Cloth</a>        
+            <div class="emptySpace">    
             </div>
-            <div class="cartItems">
-                <a href="favourites.html"> <i class="fa-solid fa-star"></i> </a>
+            <div class="cartItems"> 
+                 <i class="fa-solid fa-star" title="Favourites" id="favorites" onclick="favFunc()"></i>
                 <i class="fa-solid fa-cart-shopping" title="Shopping Cart" onclick="openHideCart()"></i> 
             </div>
         </div>
 <!--END OF NAV-->
 <!--SEARCH BAR-->
 <div class="searchBar">
-    <div id="empty"></div>
+    <div id="startShop">
+        <button class="startShop" onclick="window.location.href = 'landingDisplay.html'">HOME</button>
+    </div>
     <div id="search">
         <input type="search" id="searchEl" placeholder="Search here..."/> 
         <button class="search-btn">Search</button>
     </div>
-    <div id="sign"> </div>
+    <div id="sign"><span id="itemNo">Items + </span></div>
 </div>
 </div>
 <!--ELECTRONICS ITEMS & CARTS-->
@@ -40,8 +39,7 @@
             <div id="elecCartItems" class="elecCartItemsClass">
                 <div id="elecCartItems1"></div>
                 <div id="elecCartItems2">
-                    <hr>
-                    <p>Number of Items: <span id="noOfItems"></span></p>
+                    <hr> 
                     <p>Cost: <span id="costOfItems"></span></p>
                     <p>Tax: <span id="tax"></span></p>
                     <h3>Grand Total: <span id="grandTotal"></span></h3>
@@ -49,6 +47,9 @@
                     <button id="clear">Clear Cart</button>
                 </div>
             </div>
+        </div>
+ 
+        <div id="fav" class="fav"> 
         </div>
 
     <script src="electronics.js"></script>

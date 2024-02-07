@@ -1,5 +1,4 @@
-//START TO DISPLAY ELECTRONICS
-
+//DEFINE ELECTRONICS ARRAY TO STORE NAME,IMAGE AND PRICE
 const electronicsArray = [
     {
         id:1,
@@ -36,9 +35,43 @@ const electronicsArray = [
         name:"Cameras",
         price:19,
         image:"https://www.ugabox.com/images/shop/cameras/camera-microphones/camera-microphones-kampala-uganda.jpg"
+     },
+     {
+        id:7,
+        name:"Switch",
+        price: 57,
+        image:"https://www.noteworthyaudio.com/cdn/shop/products/melco-s100_480x.jpg?v=1704460693"
+     },
+     {
+        id:8,
+        name:"Scanner",
+        price:34,
+        image:"https://5.imimg.com/data5/XQ/NX/PA/SELLER-33294641/zebra-symbol-ds2208-sr-barcode-scanner-500x500.png"
+     },
+     {
+        id:9,
+        name:"Router",
+        price:20,
+        image:"https://ctcsolutions.co.ke/wp-content/uploads/2018/12/TL-WR840N-450x450.jpg"
+     },
+     {
+        id:10,
+        name:"E-Cable",
+        price:18,
+        image:"https://secomart.com/cdn/shop/files/ethernet-cable-network-patch-cord-005.jpg?v=1687121062"
+     },
+     {
+        id:11,
+        name:"WI-FI",
+        price:24,
+        image:"https://m.media-amazon.com/images/I/710OiCp6HpL.jpg"
      }
-]
-const elecDispItemsEl = document.getElementById("elecDispItems");
+]  
+
+//DEFINE VAR WHERE TO DISPLAY THE ITEMS
+const elecDispItemsEl = document.getElementById("elecDispItems"); 
+
+//ACCESS THE ARRAY AND DISPLAY EACH ELEMENT
 electronicsArray.forEach(({id,name,price,image}) => {
     elecDispItemsEl.innerHTML += `
     <div class="elecElement">
@@ -53,35 +86,48 @@ electronicsArray.forEach(({id,name,price,image}) => {
     </div>
     `
 });
+
+//DEFINE ALL THE VARIABLES TO BE USED IN CART CLASS
 const costOfItemsEl = document.getElementById("costOfItems"); 
 const taxEl = document.getElementById("tax");
 const elecCartItems1El = document.getElementById("elecCartItems1");
-const grandTotalEl = document.getElementById("grandTotal");
-const noOfItemsEl = document.getElementById("noOfItems");
+const grandTotalEl = document.getElementById("grandTotal"); 
+const favouritesEl = document.getElementById("fav");
+const countingEl = document.getElementById("itemNo");
 
+//DEFINE CLASS
 class Cart{
     constructor(){
         this.itemsArr = [];
         this.total = 0;
         this.tax = 1.4;
     }
-    addItemToCart(id,electronicsArray){
-        const addedItem = electronicsArray.find((item) => item.id === id);
+    //METHOD TO ADD ITEMS WHEN ADDCART BUTTON IS CLICKED
+    addItemToCart(id,array){
+        const addedItem = array.find((item) => item.id === id);
         const {name,price} = addedItem;
         this.itemsArr.push(addedItem);
 
-        const objCount = {};
+        const objCount = {};//EMPTY OBJECT TO COUNT THE NUMBER OF ID'S IN THE ITEMS ARRAY
         this.itemsArr.forEach((item)=>{
-            objCount[item.id] = (objCount[item.id] || 0) + 1;
+            objCount[item.id] = (objCount[item.id] || 0) + 1;//IF THE OBJECT COUNT EXISTS OR IS ZERO ADD ONE
         });
         const currentItemCount = objCount[addedItem.id];
         const countIdEl = document.getElementById(`countId${id}`);
+        //IF THE COUNT IS GREATER THAN 1 MULTIPLY THE VALUE WITH THE COUNT ELSE ITS FIRST CLICK IS 0 THEN IT DISPLAY ELEMENTS
         currentItemCount > 1 ? countIdEl.innerHTML = `} *${currentItemCount}` : elecCartItems1El.innerHTML += `
         <div>
         <h3>${name} <span id=countId${id}></span></h3>
         <p>Price: $${price}</p>
         </div>
         `
+        //IF THE COUNT IS >2 IT SHOULD BE ADDED TO FAVOURITES
+        currentItemCount > 2 ? favouritesEl.innerHTML =  `
+        <div id="itemVal"> 
+        <h3>${name} <span id=countId${id}></span></h3>
+        <p>Price: $${price}</p>
+        </div>
+        ` : "";
     }
     noOfItemsMethod(){
         return this.itemsArr.length;
@@ -94,37 +140,52 @@ class Cart{
         const cost = this.itemsArr.reduce((total,itemPrice) => total + itemPrice.price,0); 
         const tax = this.taxMethod(cost);
         this.total = cost + tax;
-        costOfItemsEl.textContent = `$${cost.toFixed(2)}`;
-        taxEl.textContent = `$${tax.toFixed(2)}`;
-        grandTotalEl.textContent = `$${this.total.toFixed(2)}`;
+        costOfItemsEl.innerHTML = `<span id="itemVal">$${cost.toFixed(2)}</span>`;
+        taxEl.innerHTML = `<span id="itemVal">$${tax.toFixed(2)}</span>`;
+        grandTotalEl.innerHTML = `<span id="itemVal">$${this.total.toFixed(2)}</span>`;
         return this.total;
     }
+    //CONFIRM IF YOU WANT TO CLEAR
     clearCartMethod(){
         const confirmEl = confirm("Are you sure you want to clear cart?");
         if(!confirmEl){
             return
         }else{
             elecCartItems1El.innerHTML = "";
-            this.itemsArr = []; 
-            noOfItemsEl.textContent = 0;
+            this.itemsArr = [];   
             costOfItemsEl.textContent = 0;
             taxEl.textContent = 0;
             grandTotalEl.textContent = 0;
+            countingEl.textContent = 0;
         }
     }
 
 }
-
+//CREATE VARIABLE TO REP THE CLASS
 let cartObject = new Cart; 
-const addToCartBtnEl = document.getElementsByClassName("addToCartBtn");
+
+//VARIBLE TO ACCEE ADDTOCART BTN
+const addToCartBtnEl = document.getElementsByClassName("addToCartBtn"); 
+
+//ARRAY ALL THE BUTTONS 
 [...addToCartBtnEl].forEach((btn) => {
     btn.addEventListener("click",(event) => {
-        cartObject.addItemToCart(Number(event.target.id),electronicsArray);
-        cartObject.grandTotalMethod();
-        noOfItemsEl.textContent = cartObject.noOfItemsMethod();
+        cartObject.addItemToCart(Number(event.target.id),electronicsArray); 
+        cartObject.grandTotalMethod(); 
+        countingEl.textContent = cartObject.noOfItemsMethod();
     })
 });
 
+//VARIBLE TO ACCESS CLEAR BTN
+const clearCartBtnEl = document.getElementById("clear");
+
+//FUNCTION TO CLEAR
+clearCartBtnEl.addEventListener("click",() => {
+    cartObject.clearCartMethod();
+
+})
+ 
+//VARIABLES TO DISPLAY CART ITEMS
 const elecCartItemsEl = document.getElementById("elecCartItems");
 const elecContainerEl = document.getElementById("elecContainer");
 let showCart = false;
@@ -138,8 +199,12 @@ const openHideCart =()=>{
     showCart ? elecContainerEl.style.overflow = "visible" : elecContainerEl.style.display = "";
 }
 
-const clearCartBtnEl = document.getElementById("clear");
-clearCartBtnEl.addEventListener("click",() => {
-    cartObject.clearCartMethod();
+//VAR TO ACCESS FAVOURITES WHEN CLICKED ICON
+const favouriteClass = document.getElementsByClassName("fav");
 
-})
+//FUNCTION TO GET FAVOURITES
+function favFunc(){  
+    showCart = !showCart;
+   showCart ? elecDispItemsEl.style.display = "none": elecDispItemsEl.style.display = "";
+   showCart ? favouritesEl.style.display = "block": favouritesEl.style.display = "none"; 
+}

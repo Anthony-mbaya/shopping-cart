@@ -23,13 +23,8 @@ body{
     white-space: normal;
     overflow-wrap: break-word;
 }
-.navItems{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 50%; 
-    font-size: 1.2em;
-    font-family: Arial, Helvetica, sans-serif; 
+.emptySpace{
+    width: 50%;  
 }
 .cartItems{ 
     width: 15%;
@@ -42,8 +37,21 @@ body{
     display: flex;
     justify-content: space-between; 
 }
-#empty{
-    width: 20%; 
+#startShop{
+    width: 20%;  
+    text-align: center;
+}
+.startShop{
+    background-color: orangered;
+    color: white;
+    font-size: 1.2em;
+    padding: 8px;
+    cursor: pointer;
+}
+.startShop:hover{
+    background-color: white;
+    color: orangered;
+
 }
 #search{
     width: 60%; 
@@ -339,6 +347,47 @@ body{
 .elecCartItemsClass > h3,p,button{ 
     margin: 1.3em auto;
 }
+
+#order,#clear{
+    padding: 7px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+#order{
+    background-color:#201f4b;
+    color: white;
+}
+#clear{
+    background-color: red;
+    color: white;
+}
+i{
+    cursor: pointer;
+    color: orangered;
+}
+#itemVal,#itemNo{ 
+    color: orangered;
+    border: 1px solid orangered;
+    height: fit-content;
+    padding: 3px;
+    border-top: none;
+    border-radius: 6px;
+   
+
+}
+#itemVal{
+    display: block;
+    width:8em;
+    font-size: 0.9em;
+}
+#itemNo{
+    font-size: 1.4em;
+    font-weight: bold;
+
+}
+#elecCartItems2 > p,h3{
+    font-size: 1.2em;
+}
 @media (max-width: 1040px) {
     .title {
       font-size: 1.2em; 
@@ -386,21 +435,10 @@ body{
     .elecCartItemsClass > h3,p,button{ 
         margin: 1em auto;
     }
+    #itemVal,#itemNo{
+        font-size: 1em;
+    }
 }
-#order,#clear{
-    padding: 7px;
-    font-size: 1.2em;
-    cursor: pointer;
-}
-#order{
-    background-color:#201f4b;
-    color: white;
-}
-#clear{
-    background-color: red;
-    color: white;
-}
-i{
-    cursor: pointer;
-    color: orangered;
+.fav{
+    display: none;
 }
